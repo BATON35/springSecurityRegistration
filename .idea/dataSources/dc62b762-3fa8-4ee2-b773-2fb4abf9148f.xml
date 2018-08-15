@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="@localhost">
+  <database-model serializer="dbm" rdbms="MYSQL" format-version="4.4">
+    <root id="1"/>
+    <schema id="2" parent="1" name="classicmodels">
+      <Current>1</Current>
+    </schema>
+    <schema id="3" parent="1" name="employees"/>
+    <schema id="4" parent="1" name="hb-04-one-to-many-uni"/>
+    <schema id="5" parent="1" name="hb_student_tracker"/>
+    <schema id="6" parent="1" name="information_schema"/>
+    <schema id="7" parent="1" name="letters"/>
+    <schema id="8" parent="1" name="mysql"/>
+    <schema id="9" parent="1" name="performance_schema"/>
+    <schema id="10" parent="1" name="sakila"/>
+    <schema id="11" parent="1" name="sdajdbc"/>
+    <schema id="12" parent="1" name="spring_security_custom_user_demo">
+      <Visible>1</Visible>
+    </schema>
+    <schema id="13" parent="1" name="spring_security_demo_plaintext"/>
+    <schema id="14" parent="1" name="sys"/>
+    <schema id="15" parent="1" name="szkola"/>
+    <schema id="16" parent="1" name="usermodels"/>
+    <schema id="17" parent="1" name="web_customer_tracker"/>
+    <schema id="18" parent="1" name="world"/>
+    <table id="19" parent="12" name="role"/>
+    <table id="20" parent="12" name="user"/>
+    <table id="21" parent="12" name="users_roles"/>
+    <column id="22" parent="19" name="id">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="23" parent="19" name="name">
+      <Position>2</Position>
+      <DataType>varchar(50)|0</DataType>
+    </column>
+    <key id="24" parent="19" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="25" parent="20" name="id">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="26" parent="20" name="username">
+      <Position>2</Position>
+      <DataType>varchar(50)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="27" parent="20" name="password">
+      <Position>3</Position>
+      <DataType>char(80)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="28" parent="20" name="first_name">
+      <Position>4</Position>
+      <DataType>varchar(50)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="29" parent="20" name="last_name">
+      <Position>5</Position>
+      <DataType>varchar(50)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="30" parent="20" name="email">
+      <Position>6</Position>
+      <DataType>varchar(50)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <key id="31" parent="20" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="32" parent="21" name="user_id">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="33" parent="21" name="role_id">
+      <Position>2</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="34" parent="21" name="FK_ROLE_idx">
+      <ColNames>role_id</ColNames>
+    </index>
+    <key id="35" parent="21" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>user_id
+role_id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="36" parent="21" name="FK_USER_05">
+      <ColNames>user_id</ColNames>
+      <RefSchemaName>spring_security_custom_user_demo</RefSchemaName>
+      <RefTableName>user</RefTableName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <foreign-key id="37" parent="21" name="FK_ROLE">
+      <ColNames>role_id</ColNames>
+      <RefSchemaName>spring_security_custom_user_demo</RefSchemaName>
+      <RefTableName>role</RefTableName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+  </database-model>
+</dataSource>
